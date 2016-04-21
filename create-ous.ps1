@@ -14,6 +14,9 @@ $groupname = "Branch Admin"
 
 Import-Module -Name ActiveDirectory
 
+# RegEx: \w
+#           w means any character (upper or lower case) any number and underline_ and character with accent (like french)
+#             but not unicode character.
 $computername -match "(\w+)-inta";$ouname = $Matches[1]
 
 New-ADOrganizationalUnit -Path "$location" -Name "$ouname"
